@@ -17,13 +17,11 @@ const Home = () => {
     return (
         <div className="home">
 
-            <div className="post">
 
-                { error && <div>{ error }</div> }
-                { isPending && <div>Loading....</div> }
-                { posts && <Contents  posts={posts} onDelete={onDelete} /> }
+            { error && <div>{ error }</div> }
+            { isPending && <div>Loading....</div> }
+            { posts && <Contents  posts={posts} onDelete={onDelete} /> }
                 
-            </div>
 
         </div>
     );
