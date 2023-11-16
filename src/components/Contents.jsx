@@ -1,26 +1,45 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faDeleteLeft, faUser, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 
-const Contents = ({ url, title, thumbnail}) => {
+const Contents = ({ posts, onDelete}) => {
+
+
+    
     return (
         <div>
 
-            <div className="contents">
+            { posts.map((post) => (
+
+                <div className="contents" key={post.id}>
+                                
+                    <div className="main-content">
+
+                        <img 
+                            src={post.url}
+                            alt={post.name}
+                        />
+
+                        <div>
+                            <div className="title">Name : {post.name}</div>
+                            <div className="title">Location : {post.address}</div>
+                        </div>
+
+                    </div>
+
+                    <button onClick={onDelete}>
+
+                        <FontAwesomeIcon
+                            icon={faXmark}
+                            size='1x'
+                        />
+
+                    </button>
+
+                </div>
                 
-                <a href={thumbnail} target="_blank">
-
-                    <img 
-                        src={url}
-                        alt={title}
-                    />
-
-                </a>
-
-                <div className="title">{title}</div>
-
-
-            </div>
-
+            ))}
 
         </div>
     );

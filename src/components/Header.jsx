@@ -15,7 +15,7 @@ const Header = () => {
 
                     <FontAwesomeIcon
                         icon={faUser}
-                        size='2x'
+                        size='1x'
                     />
 
                 </div>
@@ -24,7 +24,7 @@ const Header = () => {
 
                     <FontAwesomeIcon
                         icon={faNavicon}
-                        size='2x'
+                        size='1x'
                     />
 
                 </nav>

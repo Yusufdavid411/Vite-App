@@ -1,36 +1,29 @@
-import React from 'react'
-import { useEffect, useState } from "react";
-import Contents from './contents';
+import React from 'react';
+import useFetch from "./useFetch";
+import Contents from './Contents';
+import { useParams } from 'react-router-dom';
 
 const Home = () => {
 
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-      fetchData();
-    }, []);
-  
-    const fetchData = async () => {
-      await fetch("https://jsonplaceholder.typicode.com/photos?_limit=5")
-        .then((res) => res.json())
-        .then((data) => setUsers(data))
-        .catch((err) => {
-          console.log(err);
+    const { id } = useParams()
+    const { data:posts, isPending, error } = useFetch("https://65539c205449cfda0f2ef498.mockapi.io/products?_limit=10");
+
+    const onDelete = () => {
+        fetch("https://65539c205449cfda0f2ef498.mockapi.io/products/" + posts.id, {
+            method: 'DELETE',
         });
-    };
-  
-    console.log(users);
+    }
+
     return (
         <div className="home">
 
-            {users.map((user) => (
-                <Contents
-                    key={user.id}   
-                    id={user.id}
-                    url={user.url}
-                    title={user.title}
-                    thumbnail={user.thumbnailUrl}
-                />
-            ))}
+            <div className="post">
+
+                { error && <div>{ error }</div> }
+                { isPending && <div>Loading....</div> }
+                { posts && <Contents  posts={posts} onDelete={onDelete} /> }
+                
+            </div>
 
         </div>
     );
