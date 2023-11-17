@@ -61,17 +61,16 @@
 }
 
 .Temp .bal .eye {
-  margin: 0 0 0 5px;
+  margin: 2px 0 0 6px;
 }
 
 .Temp .money {
-  color: var(--backgroundColor);
   position: absolute;
   padding: 4px 10px;
   margin: 10px 30px;
   border-radius: 5px;
-  background: var(--backgroundColor);
-  color: var(--textColor);
+  /* background: var(--backgroundColor); */
+  color: var(--backgroundColor);
   font-weight: 600;
 }
 

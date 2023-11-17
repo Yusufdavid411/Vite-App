@@ -1,8 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faBell, faCalendar, faEnvelope, } from '@fortawesome/free-solid-svg-icons';
+import { faCartShopping, faBell, faCalendar, faEnvelope, faAngleRight, } from '@fortawesome/free-solid-svg-icons';
 import useFetch from '../useFetch';
-import { faEyeSlash, faEye } from '@fortawesome/free-regular-svg-icons';
+import { faEyeSlash, faEye, } from '@fortawesome/free-regular-svg-icons';
 
 
 const Template = () => {
@@ -24,7 +24,15 @@ const Template = () => {
                         />
 
                     </div>
-                    <div>Transaction History</div>
+                    <div className='bal'>
+
+                        <p>Available Balance</p>  
+                        <FontAwesomeIcon
+                            icon={faAngleRight}
+                            className='eye'
+                        />
+
+                    </div>
 
                 </div>
 
