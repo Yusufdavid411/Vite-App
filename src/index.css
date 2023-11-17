@@ -39,7 +39,7 @@
 .Temp {
   background: var(--textColor);
   width: 95%;
-  height: 30vh;
+  height: 200px;
   border-radius: 12px;
   margin: 8px auto;
   position: relative;
@@ -50,10 +50,10 @@
 
 .Temp .info {
   display: flex;
-  font-size: .7rem;
+  font-size: 1rem;
   justify-content: space-between;
   margin: 5px 10px;
-  padding: 7px;
+  padding: 11px;
 }
 
 .Temp .bal {

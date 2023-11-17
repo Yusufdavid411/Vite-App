@@ -26,7 +26,7 @@ const Template = () => {
                     </div>
                     <div className='bal'>
 
-                        <p>Available Balance</p>  
+                        <p>Transaction History</p>  
                         <FontAwesomeIcon
                             icon={faAngleRight}
                             className='eye'
