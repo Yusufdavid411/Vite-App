@@ -1,28 +1,66 @@
-import React from 'react';
-import useFetch from "./useFetch";
-import Contents from './Contents';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import TopUsers from "./HomeComp/TopUsers";
+import Template from "./HomeComp/Template";
+
 
 const Home = () => {
 
-    const { id } = useParams()
-    const { data:posts, isPending, error } = useFetch("https://65539c205449cfda0f2ef498.mockapi.io/products?_limit=10");
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        fetchData();
+    }, []);
 
-    const onDelete = () => {
-        fetch("https://65539c205449cfda0f2ef498.mockapi.io/products/" + posts.id, {
-            method: 'DELETE',
+
+    const fetchData = async () => {
+        await fetch("https://65539c205449cfda0f2ef498.mockapi.io/Users")
+        .then((res) => res.json())
+        .then((data) => setPosts(data))
+        .catch((err) => {
+            console.log(err);
         });
-    }
+    };
+
+
+    const onDelete = async (id) => {
+
+        await fetch(`https://65539c205449cfda0f2ef498.mockapi.io/Users/${id}`, {
+            method: "DELETE",
+        })
+        .then((res) => {
+            if (res.status !== 200) {
+                return;
+            }   else {
+                setPosts(
+                    posts.filter((post) => {
+                        return post.id !== id;
+                    })
+                );
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
+
+
+    console.log(posts);
 
     return (
         <div className="home">
 
+            <Template />
 
-            { error && <div>{ error }</div> }
-            { isPending && <div>Loading....</div> }
-            { posts && <Contents  posts={posts} onDelete={onDelete} /> }
-                
 
+            { posts.map((post) => (
+
+                <TopUsers
+                    key={post.id}
+                    post={post} 
+                    onDelete={onDelete}
+                />
+
+            ))}
+            
         </div>
     );
 };

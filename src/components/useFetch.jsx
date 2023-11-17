@@ -29,7 +29,7 @@ const useFetch = (url) => {
                         setError(err.message);
                     }
                 })
-        }, 200);
+        }, 1000);
 
         return () => abortCont.abort();
     }, [url]);

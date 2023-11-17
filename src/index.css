@@ -9,90 +9,143 @@
   --backgroundColor: rgb(160, 109, 5);
   --textColor: rgb(24, 10, 1);
   --hoverColor: rgb(160, 109, 5);
-  --hoverbgcolor: rgb(137, 111, 59);
+  --hoverbgcolor: rgb(181, 173, 157);
 }
 
 .header {
-  background:var(--backgroundColor);
-  border: 3px solid var(--textColor);
-  color: var(--textColor);
-  margin: 5px;
+  /* background:var(--backgroundColor); */
+  /* color: var(--textColor); */
+  border-bottom: 2px solid var(--textColor);
+  padding: 5px;
 }
 
 .head {
-  border: 3px solid var(--textColor);
+  /* border: 3px solid var(--textColor); */
   padding: 15px;
   justify-content: space-between;
   display: flex;
-  margin: 2px;
+  font-size: 1.2rem;
 }
 
 .home {
-  background: var(--textColor);
   color: var(--backgroundColor);
   height: 100%;
-  padding: 20px 10px;
+  padding: 20px 0;
   margin: 5px;
 }
 
-.contents {
-  width: 90%;
+.Temp {
+  background: var(--textColor);
+  width: 95%;
+  height: 25vh;
+  border-radius: 12px;
+  margin: 8px auto;
+  position: relative;
+}
+
+
+.Temp .cont-icon {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  margin: 10px auto;
+}
+
+.Temp .Icons {
+  padding: 8px;
+  display: flex;
+  height: 20%;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.Temp .icon {
+  color: var(--textColor);
+  background: var(--backgroundColor);
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 1.2rem;  
+  height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.TopUsers {
+  width: 92%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  margin: 15px auto;
-  border-radius: 10px;
+  margin: 18px auto;
+  border-radius: 12px;
+  border: 2px solid var(--backgroundColor);
 }
 
-.main-content {
+.User {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   padding: 10px 0 10px 10px;
 }
 
-.contents img {
-  width: 55px;
-  height: 55px;
+.TopUsers img {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 4px solid var(--backgroundColor);
+  margin: 0 0 0 5px;
 }
 
-.contents .title {
+.NameLocation {
+  margin: 0 0 0 5px;
+}
+
+.TopUsers .title {
   max-width: 200px;
   align-items: center;
   padding: 0 8px;
   margin: 5px 0 0 0;
+  font-size: .8rem;
+  font-weight: 600;
 }
 
-.contents:hover {
+.TopUsers:hover {
   background: var(--hoverColor);
   color: var(--textColor);
   transition: 1s;
 }
 
-.contents:hover img {
+.TopUsers:hover img {
   border: 4px solid var(--textColor);
 }
 
-.contents button {
-  background: var(--textColor);
-  color: var(--textColor);
+.TopUsers button {
+  background: white;
+  color: white;
   border: none;
   height: 20px;
   width: 20px;
-  border-radius: 2px 8px;
-  font-size: 17px;
+  border-radius: 5px 10px;
+  font-size: .8rem;
 }
 
-.contents:hover button {
-  background: var(--hoverbgcolor);
+.TopUsers:hover button {
   color: var(--textColor);
 }
 
-.contents button:hover {
+.TopUsers button:hover {
   background: white;
 }
+
+
 
 
 
