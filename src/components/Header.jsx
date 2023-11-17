@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faNavicon, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faGear, faNavicon, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -15,7 +15,6 @@ const Header = () => {
 
                     <FontAwesomeIcon
                         icon={faUser}
-                        size=''
                     />
 
                 </div>
@@ -23,8 +22,7 @@ const Header = () => {
                 <nav className='navigation'>
 
                     <FontAwesomeIcon
-                        icon={faNavicon}
-                        size=''
+                        icon={faGear}
                     />
 
                 </nav>
