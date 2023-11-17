@@ -50,7 +50,7 @@
 
 .Temp .info {
   display: flex;
-  font-size: 1rem;
+  font-size: .9rem;
   justify-content: space-between;
   margin: 5px 10px;
   padding: 11px;
@@ -66,12 +66,16 @@
 
 .Temp .money {
   position: absolute;
-  padding: 4px 10px;
+  padding: 5px 10px;
   margin: 10px 30px;
   border-radius: 5px;
   /* background: var(--backgroundColor); */
   color: var(--backgroundColor);
   font-weight: 600;
+}
+
+.money .figure {
+  font-size: 1.2rem;
 }
 
 
