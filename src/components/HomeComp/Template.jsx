@@ -40,7 +40,7 @@ const Template = () => {
 
                     { error && <div>{ error }</div> }
                     { isPending && <div >Loading....</div> }
-                    { money && <div className='figure'> $ { money.balance }.54</div> }
+                    { money && <div className='figure'> ${ money.balance }.54</div> }
 
                 </div>
 
