@@ -5,6 +5,8 @@ import Template from "./HomeComp/Template";
 
 const Home = () => {
 
+    // const { data:posts, isPending, error } = useFetch(`https://65539c205449cfda0f2ef498.mockapi.io/Users/1`);
+    
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         fetchData();
@@ -71,7 +73,8 @@ const Home = () => {
 
             <h3>Top Users</h3>
 
-
+            {/* { error && <div>{ error }</div> }
+            { isPending && <div >Loading....</div> } */}
             { posts.slice(0, visibleRows).map((post, index) => (
 
                 <TopUsers
