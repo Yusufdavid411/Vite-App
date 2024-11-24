@@ -17,6 +17,8 @@ const Header = () => {
                         icon={faUser}
                     />
 
+                    <h5>Welcome David</h5>
+
                 </div>
 
                 <nav className='navigation'>

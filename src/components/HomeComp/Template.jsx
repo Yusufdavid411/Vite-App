@@ -22,6 +22,7 @@ const Template = () => {
                             icon={faEyeSlash}
                             className='eye'
                         />
+                        
 
                     </div>
                     <div className='bal'>

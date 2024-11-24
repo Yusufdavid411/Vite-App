@@ -28,6 +28,11 @@
   color: var(--textColor);
 }
 
+.head .headerIcon {
+  display: flex;
+  gap: 1rem;
+}
+
 .home {
   color: var(--backgroundColor);
   height: 100%;
