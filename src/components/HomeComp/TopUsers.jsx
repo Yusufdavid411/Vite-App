@@ -13,6 +13,7 @@ const Contents = ({post , onDelete}) => {
         <div>
 
             <div className="TopUsers">
+
                                 
                 <div className="User">
 

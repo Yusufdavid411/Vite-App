@@ -45,13 +45,34 @@ const Home = () => {
 
     console.log(posts);
 
+
+
+
+    const [visibleRows, setVisibleRows] = useState(0); // Tracks how many rows are visible
+    const rowDisplayDelay = 90; // Delay (in milliseconds) between displaying rows. You can change this value.
+
+    useEffect(() => {
+        // Incrementally display rows with a delay
+        if (visibleRows < posts.length) {
+            const timer = setTimeout(() => {
+                setVisibleRows((prev) => prev + 1);
+            }, rowDisplayDelay);
+
+            // Clear the timer when the component unmounts or updates
+            return () => clearTimeout(timer);
+        }
+    }, [visibleRows, posts.length]); // Dependency ensures effect runs when visibleRows changes
+
+
     return (
         <div className="home">
 
             <Template />
 
+            <h3>Top Users</h3>
 
-            { posts.map((post) => (
+
+            { posts.slice(0, visibleRows).map((post, index) => (
 
                 <TopUsers
                     key={post.id}
